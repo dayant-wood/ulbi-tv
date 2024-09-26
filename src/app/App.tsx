@@ -5,18 +5,19 @@ import "./styles/index.scss";
 import { useTheme } from "app/providers/ThemeProvider";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "app/providers/router";
+import { Navbar } from "widgets/Navbar";
+import { AppRoutes } from "shared/config/routeConfig/routeConfig";
 
 export const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <div className={classNames("app", { hovered: true }, [theme])}>
-      <Link to="/">На главную</Link>
-      <Link to="/about"> На инфо о сайте</Link>
-
-      <button onClick={toggleTheme}>Поменять тему</button>
+      <Navbar />
 
       <AppRouter />
+
+      <button onClick={toggleTheme}>Поменять тему</button>
     </div>
   );
 };
