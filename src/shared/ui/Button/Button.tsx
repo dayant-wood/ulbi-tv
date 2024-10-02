@@ -13,12 +13,11 @@ type ButtonProps = {
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: FC<ButtonProps> = (props) => {
-  const { className, children, theme, ...otherProps } = props;
+  const { className, children, onClick, theme, ...otherProps } = props;
 
-  const { toggleTheme } = useTheme();
   return (
     <button
-      onClick={toggleTheme}
+      onClick={onClick}
       {...otherProps}
       className={classNames(styles.button, {}, [className, styles[theme]])}
     >
