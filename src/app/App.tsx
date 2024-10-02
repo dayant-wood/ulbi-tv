@@ -9,15 +9,13 @@ import { Navbar } from "widgets/Navbar";
 import { AppRoutes } from "shared/config/routeConfig/routeConfig";
 
 export const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={classNames("app", { hovered: true }, [theme])}>
       <Navbar />
 
       <AppRouter />
-
-      <button onClick={toggleTheme}>Поменять тему</button>
     </div>
   );
 };
